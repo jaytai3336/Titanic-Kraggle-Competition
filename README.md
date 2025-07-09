@@ -1,5 +1,8 @@
 # Titanic-Kraggle-Competition
 
+remember to run
+pip install -r requirements.txt
+
 ```
 └── 📁Titanic-Kraggle-Competition
     └── 📁data
