@@ -1,8 +1,5 @@
 # Titanic-Kraggle-Competition
 
-remember to run
-pip install -r requirements.txt
-
 ```
 └── 📁Titanic-Kraggle-Competition
     └── 📁data
@@ -13,7 +10,7 @@ pip install -r requirements.txt
             ├── train.csv
     └── 📁models
     └── 📁notebooks
-        ├── EDA (Exploratory Data Analysis).ipynb
+        ├── 1. EDA (Exploratory Data Analysis).ipynb
     └── 📁scripts
     └── README.md
 ```
