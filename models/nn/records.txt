@@ -1,0 +1,32 @@
+0.003
+Average Accuracy across 5 folds: 0.8249
+Std Dev Accuracy: 0.0181
+Accuracy on the entire dataset: 0.8361
+
+0.007
+Average Accuracy across 5 folds: 0.8278
+Std Dev Accuracy: 0.0273
+Accuracy on the entire dataset: 0.8403
+
+0.01
+Average Accuracy across 5 folds: 0.8137
+Std Dev Accuracy: 0.0311
+Accuracy on the entire dataset: 0.8277
+
+0.008
+Average Accuracy across 5 folds: 0.8194
+Std Dev Accuracy: 0.0253
+Accuracy on the entire dataset: 0.8347
+
+0.007
+Average Accuracy across 5 folds: 0.8250
+Std Dev Accuracy: 0.0320
+Accuracy on the entire dataset: 0.8389
+
+Average Accuracy across 5 folds: 0.8347
+Std Dev Accuracy: 0.0236
+Accuracy on the entire dataset: 0.8109
+
+Average Accuracy across 5 folds: 0.8222
+Std Dev Accuracy: 0.0321
+Accuracy on the entire dataset: 0.8333

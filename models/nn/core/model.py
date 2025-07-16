@@ -1,5 +1,5 @@
 import tensorflow as tf
-from keras.models import Sequential
+from keras.models import Sequential, load_model as keras_load_model
 from keras.layers import Dense, Dropout
 from keras.optimizers import Adam
 from keras.callbacks import ModelCheckpoint, EarlyStopping
@@ -15,12 +15,11 @@ class Model:
     def build_model(self, input_shape):
         model = Sequential()
         model.add(Dense(128, activation='relu', input_shape=input_shape))
-        model.add(Dropout(0.3))
         model.add(Dense(64, activation='relu'))
         model.add(Dropout(0.3))
         model.add(Dense(16, activation='relu'))
-        model.add(Dropout(0.3))
-        model.add(Dense(1, activation='log_sigmoid'))  # Binary classification
+        model.add(Dense(8, activation='relu'))
+        model.add(Dense(1, activation='sigmoid'))  # Binary classification
 
         model.compile(
             loss='binary_crossentropy',
@@ -62,8 +61,29 @@ class Model:
         for name, value in zip(self.model.metrics_names, results):
             print(f"{name}: {value:.4f}")
 
-    def predict(self, x):
-        return self.model.predict(x)
+    def predict(self, x, verbose=1):
+        return self.model.predict(x, verbose=verbose)
 
     def summary(self):
         self.model.summary()
+
+    def save_model(self, path=None):
+        """Save the full model to the specified path or default directory."""
+        if path is None:
+            save_dir = self.config['model']['save_dir']
+            os.makedirs(save_dir, exist_ok=True)
+            path = os.path.join(save_dir, 'model.keras')
+
+        self.model.save(path)
+        print(f"[Model] Full model saved to {path}.")
+
+    def load_model(self, path=None):
+        """Load a saved Keras model from disk."""
+        if path is None:
+            path = os.path.join(self.config['model']['save_dir'], 'model.keras')
+        
+        if not os.path.exists(path):
+            raise FileNotFoundError(f"No model found at {path}")
+        
+        self.model = keras_load_model(path)
+        print(f"[Model] Model loaded from {path}.")
