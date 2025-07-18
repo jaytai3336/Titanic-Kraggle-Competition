@@ -1,3 +1,7 @@
+# Version 1: we drop cabin, Name, ticket and passenger id
+# categorical_features = ['Pclass', 'Sex', 'SibSp 0,1,>=2', 'Parch 0,1,2,>=3', 'Embarked']
+# quantitative_features = ['Age', 'Log_Fare']
+
 import numpy as np
 import pandas as pd
 import os 
